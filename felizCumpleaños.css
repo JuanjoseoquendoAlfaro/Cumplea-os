@@ -1,0 +1,175 @@
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes drop {
+    0% { transform: translateY(-100px);
+        opacity: 0; }
+    
+    100% { transform: translateY(0);
+    opacity: 0; }
+}
+@keyframes confetti-fly {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(300px, -400px) rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes confetti-fly-right {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-300px, -400px);
+        opacity: 0;
+    }
+}
+body {
+    background-color: #ff92b6;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-left: 425px;
+    font-size: 3em;
+    animation: fadeIn 7s ease-in-out;
+}
+#contador{
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    transform: translateX(-50%);
+    font-size: 5em;
+    text-align: center;
+    animation: fadeIn 7s ease-in-out;
+    margin: 0;
+    z-index: 10px;
+
+}
+.cake {
+    margin: 50px auto;
+    position: relative;
+}
+.layer {
+    height: 50px;
+    background: #ffcc80;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    background-image: url('/img/fondomike.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen al tamaño de la capa */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+}
+.layer {
+    width: 100px;
+    height: 50px;
+    background: #ffcc80;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    animation: drop 1s ease-in-out;
+}
+.layer:nth-child(2) {
+    width: 150px;
+    margin-top: -20px;
+    animation: drop 1s ease-in-out 0.5
+}
+.layer:nth-child(3) {
+    width: 200px;
+    margin-top: -20px;
+    animation: drop 1s ease-in-out 0.25;
+}
+.candle {
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 40px;
+    background: #ff7043;
+    border-radius: 5px;
+}
+.flame {
+    position: absolute;
+    top: -20px;
+    left: 5px;
+    width: 10px;
+    height: 20px;
+    background: radial-gradient(circle, #ffeb3b, #ff9800);
+    border-radius: 50%;
+    animation: flicker 1s infinite;
+}
+.cake {
+    animation: bounce 10s infinite;
+    margin-top: 200px;
+}
+
+.confetti-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+.confetti-container2 {
+    position:relative ;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+.confetti-container3 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 1000;
+    animation: confetti-fly-right 2s linear infinite;
+}
+.confetti-container4 {
+   position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 1000;
+    animation: confetti-fly-right 2s linear infinite;
+}
+.confetti {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 12px;
+    height: 18px;
+    opacity: 0.8;
+    border-radius: 3px;
+    animation: confetti-fly 2s linear infinite;
+}
+
+.confetti1 { background: #ffeb3b; animation-delay: 0s; }
+.confetti2 { background: #e91e63; animation-delay: 0.3s; }
+.confetti3 { background: #4caf50; animation-delay: 0.6s; }
+.confetti4 { background: #2196f3; animation-delay: 0.9s; }
+.confetti5 { background: #ff9800; animation-delay: 1.2s; }
